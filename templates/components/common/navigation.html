@@ -1,5 +1,8 @@
 <nav class="navUser">
     {{> components/common/currency-selector}}
+    
+    <svg style="width: auto; height: 30px; margin-top:15px; margin-left:-50px"><use xlink:href="#icon-header-logo-stansport" /></svg>
+    {{> components/common/navigation-menu}}
 
     <ul class="navUser-section navUser-section--alt">
         {{#if customer.store_credit.value '>' 0}}
@@ -25,7 +28,10 @@
             <li class="navUser-item navUser-item--divider">|</li>
         {{/if}}
         <li class="navUser-item">
-            <a class="navUser-action navUser-action--quickSearch" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false"><svg><use xlink:href="#icon-header-icon-search" /></svg></a>
+            <a class="navUser-action navUser-action--quickSearch" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">
+                <svg><use xlink:href="#icon-header-icon-search" /></svg>
+                {{lang 'common.search'}}
+            </a>
         </li>
         {{#if settings.gift_certificates_enabled}}
             <li class="navUser-item">
@@ -50,7 +56,11 @@
                 data-dropdown="cart-preview-dropdown"
                 data-options="align:right"
                 href="{{urls.cart}}">
-                <span class="navUser-item-cartLabel"><svg><use xlink:href="#icon-header-icon-cart" /></svg></span> <span class="countPill cart-quantity"></span>
+                <span class="navUser-item-cartLabel">
+                    <svg><use xlink:href="#icon-header-icon-cart" /></svg>
+                </span> 
+                <span class="countPill cart-quantity">
+                </span>
             </a>
 
             <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
