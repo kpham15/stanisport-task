@@ -1,9 +1,50 @@
 <nav class="navUser">
     {{> components/common/currency-selector}}
-    
-    <svg style="width: auto; height: 30px; margin-top:15px; margin-left:-50px"><use xlink:href="#icon-header-logo-stansport" /></svg>
-    {{> components/common/navigation-menu}}
 
+    {{> components/common/navigation-menu}}
+    
+    <ul class="newNavUser-section newNavUser-section--alt">
+        <li class="navUser-item">
+            <a class="navUser-action navUser-action--quickSearch" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false" style="display:flex; align-items: center;">
+                <span id="search-icon">
+                    <svg><use xlink:href="#icon-header-icon-search" /></svg>
+                </span>
+                <span>{{lang 'common.search'}}</span>
+            </a>
+        </li>
+        <li class="navUser-item navUser-item--account">
+            {{#if customer}}
+                <a class="navUser-action" href="{{urls.account.index}}">
+                    {{lang 'common.account'}}
+                </a>
+                <a class="navUser-action" href="{{urls.auth.logout}}">
+                    {{lang 'common.logout'}}
+                </a>
+            {{else}}
+                <a class="navUser-action" href="{{urls.auth.login}}">
+                    <svg><use xlink:href="#icon-header-icon-account" /></svg>
+                </a>
+            {{/if}}
+        </li>
+        <li class="navUser-item navUser-item--cart">
+            <a
+                class="navUser-action"
+                data-cart-preview
+                data-dropdown="cart-preview-dropdown"
+                data-options="align:right"
+                href="{{urls.cart}}">
+                <span class="navUser-item-cartLabel">
+                    <svg><use xlink:href="#icon-header-icon-cart" /></svg>
+                </span> 
+                <span class="countPill cart-quantity">
+                </span>
+            </a>
+
+            <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
+        </li>
+    </ul>
+    
+    {{#if 1 '<' 0}}
     <ul class="navUser-section navUser-section--alt">
         {{#if customer.store_credit.value '>' 0}}
             <li class="navUser-item">
@@ -29,7 +70,7 @@
         {{/if}}
         <li class="navUser-item">
             <a class="navUser-action navUser-action--quickSearch" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">
-                <svg><use xlink:href="#icon-header-icon-search" /></svg>
+                <svg style="margin-right: 5px;"><use xlink:href="#icon-header-icon-search" /></svg>
                 {{lang 'common.search'}}
             </a>
         </li>
@@ -66,6 +107,7 @@
             <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
         </li>
     </ul>
+    {{/if}}
     <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
         {{> components/common/quick-search}}
     </div>
