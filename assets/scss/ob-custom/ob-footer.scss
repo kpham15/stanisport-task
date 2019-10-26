@@ -58,3 +58,15 @@ article {
     }
   }
 }
+
+.footer-social {
+  list-style-type: none;
+  display: inline-flex;
+  margin-top: 15px;
+  margin-left: 20px;
+
+  li {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
