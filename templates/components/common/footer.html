@@ -18,6 +18,69 @@
     {{/if}}
 
 {{/if}}
+
+<footer class="newFooter" role="contentinfo">
+    <div class="container">
+        <section class="newFooter-info">
+            <ul class="footerLinks-list">
+                <li class="footerLinks-item">
+                    <a href="{{urls.sitemap}}">Site Map</a>
+                </li>
+                <li class="footerLinks-item">
+                    <a href="{{urls.contact-us}}">Contact</a>
+                </li>
+                <li class="footerLinks-item">
+                    <a href="{{urls.privacy}}">Privacy & Terms</a>
+                </li>
+                <li class="footerLinks-item">
+                    <a href="{{urls.shop}}">Catalog</a>
+                </li>
+                <li class="footerLinks-item">
+                    <a href="{{urls.help}}">Help</a>
+                </li>
+                <li class="footerLinks-item">
+                    <a href="{{urls.social}}">Social</a>
+                </li>
+            </ul>
+            <article class="newFooter-info-col" data-section-type="newsletterSubscription">
+                {{#if settings.show_newsletter_box}}
+                    {{> components/common/subscription-form}}
+                {{/if}}
+            </article>
+            <ul class="footer-social">
+                <li class="footer-instagram">
+                    <a class="footer-action" href="/instagram.php">
+                        <span id="instagram-icon">
+                                <svg>
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-footer-icon-social-instagram"></use>
+                                </svg>
+                        </span>
+                    </a>
+                </li>
+                <li class="footer-facebook">
+                    <a class="footer-action" href="/facebook.php">
+                        <span id="facebook-icon">
+                                <svg>
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-footer-icon-social-facebook"></use>
+                                </svg>
+                        </span>
+                    </a>
+                </li>
+                <li class="footer-twitter">
+                        <a class="footer-action" href="/twitter.php">
+                            <span id="twitter-icon">
+                                    <svg>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-footer-icon-social-twitter"></use>
+                                    </svg>
+                            </span>
+                        </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</footer>
+
+{{#if 0 '>' 1}}
 <footer class="footer" role="contentinfo">
     <div class="container">
         {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
@@ -103,3 +166,4 @@
         {{/if}}
     </div>
 </footer>
+{{/if}}
