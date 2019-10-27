@@ -1,5 +1,5 @@
 .card-img-container img {
-  object-fit:none;
+  object-fit:inherit;
 }
 
 .container {
@@ -26,7 +26,7 @@
 	height: 100%;
 }
 
-.whoWeAreTop {
+.divTop {
   background-color: #efefef;
   min-height:100px;
   display: flex;
@@ -49,4 +49,48 @@
         color: orange;
       }
     }
+}
+
+.initiativeContent {
+  display: flex;
+  align-items:center;
+}
+
+.initiativeContent-text {
+  min-width: 600px;
+  position: relative;
+  opacity: .9;
+  background: #cc9106;
+  float: right;
+  transform: translateX(-331px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 75px;
+  
+  p {
+    color:white;
+    text-align:center;
+  }
+}
+
+.initiativeLink {
+  display:flex;
+  align-items:center;
+  
+  a {
+    text-decoration:none;
+  }
+}
+
+.blog-post {
+  display:flex;
+  padding-left: 10%;
+  padding-right: 10%;
+  background: #efefef;
+  span {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
 }
